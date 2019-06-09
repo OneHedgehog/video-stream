@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nginx-frontend:
+    build:
+        context: ./frontend/docker/nginx
+    volumes:
+      - ./frontend:/var/www/frontend
+    ports:
+      - "8000:8000"
