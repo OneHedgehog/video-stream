@@ -7,3 +7,14 @@ services:
       - ./frontend:/var/www/frontend
     ports:
       - "8000:8000"
+  nodejs-frontend:
+    build:
+      context: ./frontend/docker/nodejs
+    volumes:
+      - ./frontend:/var/www/frontend
+    environment:
+      - npm_config_unsafe_perm=true
+    working_dir: /var/www/frontend
+    ports:
+      - "8080:8080"
+    tty: true

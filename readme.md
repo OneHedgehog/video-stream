@@ -1,1 +1,1 @@
-vagrant plugin install vagrant-docker-compose
+docker-compose run  nodejs-frontend npm i --no-bin-links
