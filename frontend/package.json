@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "./node_modules/@vue/cli-service/bin/vue-cli-service.js  serve",
-    "build": "./node_modules/@vue/cli-service/bin/vue-cli-service.js  build",
+     "build": "./node_modules/@vue/cli-service/bin/vue-cli-service.js  build",
     "lint": "./node_modules/@vue/cli-service/bin/vue-cli-service.js  lint",
+    "watch": "./node_modules/@vue/cli-service/bin/vue-cli-service.js build --watch --no-clean",
     "test:e2e": "./node_modules/@vue/cli-service/bin/vue-cli-service.js  test:e2e",
     "test:unit": "./node_modules/@vue/cli-service/bin/vue-cli-service.js  test:unit"
   },
