@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx-frontend:
     build:
-        context: ./frontend/docker/nginx
+      context: ./frontend/docker/nginx
     volumes:
       - ./frontend:/var/www/frontend
       - ./frontend/docker/nginx/logs:/var/log/nginx
@@ -26,4 +26,18 @@ services:
     tty: true
     ports:
       - "4200:4200"
-
+  nginx-backend-api:
+    build:
+      context: ./backend-api/docker/nginx
+    volumes:
+      - ./backend-api:/var/www/backend-api
+      - ./backend-api/docker/nginx/logs:/var/log/nginx
+    ports:
+      - "8080:8080"
+  php-backend-api:
+    build:
+      context: ./backend-api/docker/php
+    volumes:
+      - ./backend-api:/var/www/backend-api
+    ports:
+      - "9000:9000"
