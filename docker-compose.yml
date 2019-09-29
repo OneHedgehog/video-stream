@@ -37,6 +37,7 @@ services:
   php-backend-api:
     build:
       context: ./backend-api/docker/php
+    working_dir: /var/www/backend-api
     volumes:
       - ./backend-api:/var/www/backend-api
     ports:
