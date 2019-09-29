@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx-frontend:
     build:
-      context: ./frontend/docker/nginx
+      context: frontend/.docker/nginx
     volumes:
       - ./frontend:/var/www/frontend
       - ./frontend/docker/nginx/logs:/var/log/nginx
@@ -11,7 +11,7 @@ services:
   nodejs-frontend:
     stdin_open: true
     build:
-      context: ./frontend/docker/nodejs
+      context: frontend/.docker/nodejs
     volumes:
       - ./frontend:/var/www/frontend
     environment:
@@ -28,17 +28,17 @@ services:
       - "4200:4200"
   nginx-backend-api:
     build:
-      context: ./backend-api/docker/nginx
+      context: backend-api/api/.docker/nginx
     volumes:
-      - ./backend-api:/var/www/backend-api
-      - ./backend-api/docker/nginx/logs:/var/log/nginx
+      - ./backend-api/api:/var/www/backend-api/api
+      - ./backend-api/api/.docker/nginx/logs:/var/log/nginx
     ports:
       - "8080:8080"
   php-backend-api:
     build:
-      context: ./backend-api/docker/php
-    working_dir: /var/www/backend-api
+      context: backend-api/api/.docker/php
+    working_dir: /var/www/backend-api/api
     volumes:
-      - ./backend-api:/var/www/backend-api
+      - ./backend-api/api:/var/www/backend-api/api
     ports:
       - "9000:9000"
