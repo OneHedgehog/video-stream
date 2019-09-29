@@ -15,3 +15,6 @@
 10.0.2.2 - - [29/Sep/2019:14:57:28 +0000] "GET / HTTP/1.1" 200 86327 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [29/Sep/2019:16:20:29 +0000] "GET / HTTP/1.1" 200 86144 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [29/Sep/2019:17:30:49 +0000] "GET / HTTP/1.1" 200 86315 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [29/Sep/2019:17:54:32 +0000] "GET / HTTP/1.1" 200 86351 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [29/Sep/2019:17:58:28 +0000] "GET / HTTP/1.1" 404 4105 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [29/Sep/2019:18:00:56 +0000] "GET / HTTP/1.1" 404 4105 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
