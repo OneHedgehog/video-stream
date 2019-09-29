@@ -5,9 +5,11 @@ services:
         context: ./frontend/docker/nginx
     volumes:
       - ./frontend:/var/www/frontend
+      - ./frontend/docker/nginx/logs:/var/log/nginx
     ports:
       - "8000:8000"
   nodejs-frontend:
+    stdin_open: true
     build:
       context: ./frontend/docker/nodejs
     volumes:
@@ -18,5 +20,10 @@ services:
       - CHOKIDAR_USEPOLLING=true
       #decrease CPU load
       - CHOKIDAR_INTERVAL=1000
+      - CHOKIDAR_USE_FS_EVENTS=true
+      - CHOKIDAR_IGNORE_PERMISSION_ERRORS=true
     working_dir: /var/www/frontend
     tty: true
+    ports:
+      - "4200:4200"
+
