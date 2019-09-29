@@ -22,4 +22,6 @@ RUN apk add --update \
     #make symfony global
     &&  mv /root/.symfony/bin/symfony /usr/local/bin/symfony \
     &&  composer require --dev symfony/phpunit-bridge \
-    &&  composer require symfony/maker-bundle --dev
+    #need for using symfony maker
+    &&  composer require symfony/maker-bundle --dev \
+    &&  composer require doctrine/annotations
