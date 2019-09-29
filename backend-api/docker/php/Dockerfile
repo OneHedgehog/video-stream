@@ -21,4 +21,5 @@ RUN apk add --update \
     && wget https://get.symfony.com/cli/installer -O - | bash \
     #make symfony global
     &&  mv /root/.symfony/bin/symfony /usr/local/bin/symfony \
-    &&  composer require --dev symfony/phpunit-bridge
+    &&  composer require --dev symfony/phpunit-bridge \
+    &&  composer require symfony/maker-bundle --dev
