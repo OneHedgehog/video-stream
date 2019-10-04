@@ -29,3 +29,7 @@
 10.0.2.2 - - [29/Sep/2019:20:18:20 +0000] "GET / HTTP/1.1" 404 571 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [29/Sep/2019:20:18:21 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [29/Sep/2019:20:22:05 +0000] "GET / HTTP/1.1" 404 4092 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [29/Sep/2019:20:32:52 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [04/Oct/2019:20:18:03 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [04/Oct/2019:20:49:06 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [04/Oct/2019:20:49:09 +0000] "GET /favicon.ico HTTP/1.1" 404 24703 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"

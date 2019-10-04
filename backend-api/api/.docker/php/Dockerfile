@@ -24,4 +24,5 @@ RUN apk add --update \
     &&  composer require --dev symfony/phpunit-bridge \
     #need for using symfony maker
     &&  composer require symfony/maker-bundle --dev \
-    &&  composer require doctrine/annotations
+    &&  composer require doctrine/annotations \
+    &&  composer require symfony/orm-pack

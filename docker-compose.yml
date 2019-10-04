@@ -42,3 +42,14 @@ services:
       - ./backend-api/api:/var/www/backend-api/api
     ports:
       - "9000:9000"
+  postgres-backend-api:
+    build:
+      context: backend-api/api/.docker/postgres
+    restart: always
+    ports:
+      #care, custom port for prevent conflict
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: video-stream-api
+      POSTGRES_PASSWORD: uVK4PBfdNBncWLbmZMKG
+      POSTGRES_DB: video-stream-api
