@@ -12,7 +12,6 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-        phpinfo();
         return $this->json([
             'message' => 'Welcome to your new controller!',
             'path' => 'src/Controller/IndexController.php',
