@@ -12,6 +12,14 @@ RUN apk add --update \
     php7-session \
     php7-simplexml \
     php7-tokenizer \
+    #add postgres driver
+    postgresql-dev \
+    libpq \
+    #add postgres driver's dependencies
+    php7-pdo \
+    php7-pdo_pgsql \
+    php7-pgsql \
+    php7-mcrypt \
     && rm -rf /var/cache/apk/* \
     #install composer
     && curl -sS https://getcomposer.org/installer | php \
@@ -26,3 +34,9 @@ RUN apk add --update \
     &&  composer require symfony/maker-bundle --dev \
     &&  composer require doctrine/annotations \
     &&  composer require symfony/orm-pack
+
+#adding php extension
+RUN docker-php-ext-install  pdo \
+                            pdo_pgsql \
+                            pgsql \
+

@@ -34,3 +34,8 @@
 10.0.2.2 - - [04/Oct/2019:20:49:06 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [04/Oct/2019:20:49:09 +0000] "GET /favicon.ico HTTP/1.1" 404 24703 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [04/Oct/2019:21:31:49 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [04/Oct/2019:21:52:29 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [04/Oct/2019:22:25:57 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [05/Oct/2019:22:42:23 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [05/Oct/2019:22:42:24 +0000] "GET /favicon.ico HTTP/1.1" 404 27376 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [05/Oct/2019:22:57:41 +0000] "GET / HTTP/1.1" 200 87710 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
