@@ -5,20 +5,15 @@ import {AboutComponent} from "./about/about.component";
 
 //Todo move to config
 export enum RoutesContainer {
-  HOME ='',
-  ABOUT = 'about'
+  LOGIN = 'login'
 }
 
 //todo make page not found
 
 const routes: Routes = [
   {
-    path: RoutesContainer.HOME,
+    path: RoutesContainer.LOGIN,
     component: HomeComponent
-  },
-  {
-    path: RoutesContainer.ABOUT,
-    component: AboutComponent
   },
 ];
 

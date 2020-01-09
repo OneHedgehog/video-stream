@@ -49,6 +49,8 @@ services:
     ports:
       #care, custom port for prevent conflict
       - "5433:5432"
+    volumes:
+      -  ./backend-api/api/.docker/postgres/dbfiles:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: video-stream-api
       POSTGRES_PASSWORD: uVK4PBfdNBncWLbmZMKG

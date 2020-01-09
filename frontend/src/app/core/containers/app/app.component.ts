@@ -8,7 +8,5 @@ import  { RoutesContainer } from "../../../app-routing.module";
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  public readonly homeRoute: string = `/${RoutesContainer.HOME}`;
-  public readonly aboutRoute: string = `/${RoutesContainer.ABOUT}`;
-
+  public readonly loginRoute: string = `/${RoutesContainer.LOGIN}`;
 }
