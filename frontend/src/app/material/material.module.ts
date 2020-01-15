@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import {MatButtonModule, MatMenuModule} from "@angular/material";
-import {AppRoutingModule} from "../app-routing.module";
+import {MatButtonModule, MatCardModule, MatMenuModule, MatFormFieldModule} from "@angular/material";
 
 
 const MODULES = [
   MatMenuModule,
   MatButtonModule,
-  AppRoutingModule,
+  MatCardModule,
+  MatFormFieldModule
 ]
 
 @NgModule({

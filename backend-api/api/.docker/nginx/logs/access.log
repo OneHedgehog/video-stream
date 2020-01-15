@@ -46,3 +46,5 @@
 10.0.2.2 - - [06/Oct/2019:13:49:22 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [09/Jan/2020:20:33:24 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
 10.0.2.2 - - [09/Jan/2020:20:33:27 +0000] "GET /favicon.ico HTTP/1.1" 404 27383 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+10.0.2.2 - - [10/Jan/2020:19:57:24 +0000] "GET / HTTP/1.1" 200 102 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+10.0.2.2 - - [10/Jan/2020:19:57:25 +0000] "GET /favicon.ico HTTP/1.1" 404 27369 "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"

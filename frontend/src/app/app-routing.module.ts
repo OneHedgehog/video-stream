@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
-import {HomeComponent} from "./home/home.component";
-import {AboutComponent} from "./about/about.component";
+import {LoginPageComponent} from "./auth/containers/login-page/login-page.component";
 
 //Todo move to config
 export enum RoutesContainer {
@@ -13,7 +12,7 @@ export enum RoutesContainer {
 const routes: Routes = [
   {
     path: RoutesContainer.LOGIN,
-    component: HomeComponent
+    component: LoginPageComponent
   },
 ];
 
