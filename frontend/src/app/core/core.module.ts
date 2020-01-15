@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {AppComponent} from "./containers/app/app.component";
 
-import { RouterModule } from '@angular/router';
 import {MaterialModule} from "../material/material.module";
-
+import {RouterModule} from "@angular/router";
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    SharedModule,
     MaterialModule,
-    CommonModule,
-    RouterModule
+    RouterModule.forChild([])
   ],
   exports: [AppComponent]
 })

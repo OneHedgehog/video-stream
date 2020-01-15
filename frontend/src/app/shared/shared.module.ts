@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule} from "@angular/router";
 
-const MODULES = [RouterModule];
+const MODULES = [CommonModule];
 
 
 @NgModule({
   imports: [
-    CommonModule,
     ...MODULES
   ],
   exports: MODULES
