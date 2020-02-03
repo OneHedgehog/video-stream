@@ -9,7 +9,7 @@ import {UserAuthCredentilas} from "../../models/user";
 })
 export class LoginFormComponent implements OnInit {
 
-  @Output() submitted = new EventEmitter<UserAuthCredentilas>();
+  @Output() onAuthFormSubmitted = new EventEmitter<UserAuthCredentilas>();
 
   public loginFormGroup: FormGroup = new FormGroup({
     username: new FormControl(),
@@ -25,7 +25,7 @@ export class LoginFormComponent implements OnInit {
   public onAuthSubmit() {
     alert('df');
     if (this.loginFormGroup.valid) {
-      this.submitted.emit(this.loginFormGroup.value);
+      this.onAuthFormSubmitted.emit(this.loginFormGroup.value);
     }
   }
 
