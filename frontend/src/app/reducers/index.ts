@@ -1,6 +1,7 @@
 import * as fromRouter from '@ngrx/router-store';
 import { InjectionToken } from '@angular/core';
-import {Action, ActionReducer, ActionReducerMap} from "@ngrx/store";
+import {Action, ActionReducer, ActionReducerMap, MetaReducer} from "@ngrx/store";
+import {environment} from "../../environments/environment";
 
 export interface State {
   router: fromRouter.RouterReducerState<any>;
@@ -27,3 +28,7 @@ export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
     return result;
   };
 }
+
+export const metaReducers: MetaReducer<State>[] = !environment.production
+  ? [logger]
+  : [];
