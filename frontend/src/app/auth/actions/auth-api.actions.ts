@@ -4,7 +4,8 @@ import {User} from "../models/user";
 
 export const loginSuccess = createAction(
   '[Auth/API] Login Success',
-  props<{ user: User }>()
+  // todo add user typing
+  props<{ user: any }>()
 );
 
 export const loginFailure = createAction(

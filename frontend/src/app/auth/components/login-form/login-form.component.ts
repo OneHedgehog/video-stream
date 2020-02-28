@@ -23,7 +23,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   public onAuthSubmit() {
-    alert('df');
     if (this.loginFormGroup.valid) {
       this.onAuthFormSubmitted.emit(this.loginFormGroup.value);
     }

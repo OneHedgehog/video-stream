@@ -11,6 +11,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {StoreModule} from "@ngrx/store";
 import {metaReducers, ROOT_REDUCERS} from "./reducers";
 import {RouterState, StoreRouterConnectingModule} from "@ngrx/router-store";
+import {EffectsModule} from "@ngrx/effects";
+import {AuthEffects} from "./auth/effects/auth.effects";
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import {RouterState, StoreRouterConnectingModule} from "@ngrx/router-store";
         strictActionSerializability: true,
       }
     }),
+
+    EffectsModule.forRoot([]),
 
     StoreRouterConnectingModule.forRoot({
       routerState: RouterState.Minimal,

@@ -19,7 +19,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   onAuthFormSubmitted(userAuthCredentials: UserAuthCredentilas) {
-    console.log('df');
     this.store.dispatch(AuthActions.login({ userAuthCredentials }));
   }
 

@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {Router} from "@angular/router";
-import {catchError, exhaustMap, map} from "rxjs/operators";
+import {catchError, exhaustMap, map, tap} from "rxjs/operators";
 import {AuthActions, AuthApiActions} from "../actions";
 import {UserAuthCredentilas} from "../models/user";
 import {of} from "rxjs";
@@ -14,13 +14,22 @@ export class AuthEffects {
       ofType(AuthActions.login),
       map(action => action.userAuthCredentials),
       exhaustMap((userAuthCredentilas: UserAuthCredentilas) => {
-        console.log('fd');
+        alert('df');
         return this.authService.login(userAuthCredentilas).pipe(
-          map(user => AuthApiActions.loginSuccess({ user })),
+          map(user => AuthApiActions.loginSuccess({user})),
           catchError(error => of(AuthApiActions.loginFailure({ error })))
         )
       })
     )
+  );
+
+  loginSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthApiActions.loginSuccess),
+        tap(() => this.router.navigate(['/']))
+      ),
+    { dispatch: false }
   );
 
   constructor(

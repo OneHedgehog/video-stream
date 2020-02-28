@@ -5,6 +5,11 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import {MaterialModule} from "../material/material.module";
 import {SharedModule} from "../shared/shared.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {EffectsModule} from "@ngrx/effects";
+import {AuthEffects} from "./effects/auth.effects";
+import {StoreModule} from "@ngrx/store";
+import * as fromAuth from "./reducers";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [LoginPageComponent, LoginFormComponent],
@@ -13,7 +18,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducers),
+    EffectsModule.forFeature([AuthEffects]),
   ]
 })
 export class AuthModule { }
