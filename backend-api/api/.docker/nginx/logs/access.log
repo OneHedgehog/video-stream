@@ -315,3 +315,5 @@
 10.0.2.2 - - [20/Mar/2020:00:39:09 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 10.0.2.2 - - [20/Mar/2020:00:40:57 +0000] "GET /login/ HTTP/1.1" 404 27 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 10.0.2.2 - - [20/Mar/2020:00:40:57 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+10.0.2.2 - - [20/Mar/2020:00:47:09 +0000] "GET /login/ HTTP/1.1" 200 90384 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+10.0.2.2 - - [20/Mar/2020:00:47:10 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/login/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
