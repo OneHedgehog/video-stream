@@ -1,11 +1,11 @@
 import { props, createAction } from '@ngrx/store';
-import {User} from "../models/user";
+import {User, UserAuthCredentilas} from "../models/user";
 
 
 export const loginSuccess = createAction(
   '[Auth/API] Login Success',
   // todo add user typing
-  props<{ user: any }>()
+  props<{ user: User }>()
 );
 
 export const loginFailure = createAction(

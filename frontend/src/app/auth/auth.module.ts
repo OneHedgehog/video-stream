@@ -14,14 +14,14 @@ import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [LoginPageComponent, LoginFormComponent],
   imports: [
+    CommonModule,
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    CommonModule,
     HttpClientModule,
-    StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducers),
     EffectsModule.forFeature([AuthEffects]),
+    // StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducers),
   ]
 })
 export class AuthModule { }

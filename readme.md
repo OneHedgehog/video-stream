@@ -16,4 +16,7 @@
 ### init symfony app skeleteon
 `symfony new video-stream-api --no-git`
 
+### connect to docker ps
+`docker exec -i -t 6dfe83c14d53 bash`
+
 
