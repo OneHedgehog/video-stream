@@ -28,18 +28,19 @@ services:
       - "4200:4200"
   nginx-backend-api:
     build:
-      context: backend-api/api/.docker/nginx
+      context: backend-api/auth-service/.docker/nginx
     volumes:
-      - ./backend-api/api:/var/www/backend-api/api
-      - ./backend-api/api/.docker/nginx/logs:/var/log/nginx
+      - ./backend-api/auth-service:/var/www/backend-api/auth-service
+      - ./backend-api/auth-service/.docker/nginx/logs:/var/log/nginx
+    command: [nginx-debug, '-g', 'daemon off;']
     ports:
       - "8080:8080"
-  php-backend-api:
+  php-backend-auth-api:
     build:
-      context: backend-api/api/.docker/php
-    working_dir: /var/www/backend-api/api
+      context: backend-api/auth-service/.docker/php
+    working_dir: /var/www/backend-api/auth-service
     volumes:
-      - ./backend-api/api:/var/www/backend-api/api
+      - ./backend-api/auth-service:/var/www/backend-api/auth-service
     ports:
       - "9000:9000"
     environment:

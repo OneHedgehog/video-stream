@@ -11,7 +11,7 @@
 `docker-compose run nodejs-frontend`
 
 ### Run pre requires after symfony install
-`docker-compose run php-backend-api symfony check:requirements`
+`docker-compose run php-backend-auth-api symfony check:requirements`
 
 ### init symfony app skeleteon
 `symfony new video-stream-api --no-git`

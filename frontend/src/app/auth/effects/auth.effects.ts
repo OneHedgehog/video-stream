@@ -17,7 +17,7 @@ export class AuthEffects {
       }),
       map(action => action.userAuthCredentials),
       exhaustMap((userAuthCredentilas: UserAuthCredentilas) => {
-        alert('df');
+        alert('df dfdf');
         return this.authService.login(userAuthCredentilas).pipe(
           map((user: User) => AuthApiActions.loginSuccess({user})),
           catchError(error => of(AuthApiActions.loginFailure({ error })))

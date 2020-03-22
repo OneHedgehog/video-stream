@@ -42,4 +42,4 @@ RUN  php -d memory_limit=-1 /usr/local/bin/composer require --dev symfony/phpuni
     #make symfony global
     &&  mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
-#RUN chmod 777 /var/www/backend-api/
+#RUN chmod 777 /var/www/auth-service/
