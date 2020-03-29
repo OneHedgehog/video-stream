@@ -12,6 +12,7 @@ export class LoginFormComponent implements OnInit {
   @Output() onAuthFormSubmitted = new EventEmitter<UserAuthCredentilas>();
 
   public loginFormGroup: FormGroup = new FormGroup({
+    email: new FormControl(),
     username: new FormControl(),
     password: new FormControl(),
   });

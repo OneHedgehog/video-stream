@@ -12,6 +12,6 @@ export class AuthService {
   ) { }
 
   public login(userAuthCredentilas: UserAuthCredentilas) {
-    return this.httpClient.post('http://localhost:8080/auth/login', userAuthCredentilas)
+    return this.httpClient.post('http://localhost:8080/auth/register', userAuthCredentilas)
   }
 }

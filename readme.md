@@ -19,4 +19,14 @@
 ### connect to docker ps
 `docker exec -i -t 6dfe83c14d53 bash`
 
+### add amqp lib
+`docker-compose run php-backend-auth-api composer require php-amqplib/rab
+bitmq-bundle`
+
+
+### run consumer
+`docker-compose run php-backend-auth-api php bin/console rabbitmq:consumer user_m
+ailing -vvv`
+
+
 

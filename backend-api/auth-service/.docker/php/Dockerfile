@@ -20,26 +20,35 @@ RUN apk add --update \
     php7-pdo_pgsql \
     php7-pgsql \
     php7-mcrypt \
+    libsodium \
+    libsodium-dev \
+    $PHPIZE_DEPS \
+    && pecl install xdebug-2.9.4 \
+    && docker-php-ext-enable xdebug \
     && rm -rf /var/cache/apk/* \
     #install composer
     && curl -sS https://getcomposer.org/installer | php \
 #    #make composer global command
     && mv composer.phar /usr/local/bin/composer
+#    && chmod 777 -R /var/www/backend-api/auth-service
 
 
 #    #need for using symfony maker
 RUN  composer require symfony/maker-bundle --dev \
-    &&  composer require doctrine/annotations \
+   &&  composer require doctrine/annotations \
    &&  php -d memory_limit=-1 /usr/local/bin/composer require symfony/orm-pack
 
 #adding php extension
 RUN docker-php-ext-install  pdo \
                             pdo_pgsql \
-                            pgsql
+                            pgsql \
+                            sodium \
+                            bcmath \
+                            sockets
 
 RUN  php -d memory_limit=-1 /usr/local/bin/composer require --dev symfony/phpunit-bridge \
     && wget https://get.symfony.com/cli/installer -O - | bash \
     #make symfony global
     &&  mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
-#RUN chmod 777 /var/www/auth-service/
+RUN composer install

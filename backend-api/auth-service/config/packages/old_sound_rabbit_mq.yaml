@@ -1,0 +1,15 @@
+old_sound_rabbit_mq:
+    connections:
+        default:
+            url: '%env(RABBITMQ_URL)%'
+    producers:
+        # use 'old_sound_rabbit_mq.task_producer' service to send data.
+        user_mailing:
+            connection:       default
+            exchange_options: { name: 'user_mailing_queue', type: direct }
+    consumers:
+        user_mailing:
+            connection:       default
+            exchange_options: { name: 'user_mailing_queue', type: direct }
+            queue_options:    { name: 'user_mailing_queue'}
+            callback:         App\Consumer\UserConsumer

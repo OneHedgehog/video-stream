@@ -230,3 +230,5 @@
 10.0.2.2 - - [21/Sep/2019:22:21:34 +0000] "GET /polyfills.js.map HTTP/1.1" 200 261146 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [21/Sep/2019:22:21:34 +0000] "GET /vendor.js.map HTTP/1.1" 200 4206662 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
 10.0.2.2 - - [21/Sep/2019:22:21:34 +0000] "GET /favicon.ico HTTP/1.1" 200 948 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
+10.0.2.2 - - [29/Mar/2020:13:25:43 +0000] "GET /img/icons/android-chrome-192x192.png HTTP/1.1" 500 595 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+10.0.2.2 - - [29/Mar/2020:13:25:43 +0000] "GET /img/icons/android-chrome-512x512.png HTTP/1.1" 500 595 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"

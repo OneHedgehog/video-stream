@@ -3,12 +3,13 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @Orm\Table(name="users")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -18,12 +19,12 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, unique=true, nullable=false)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true,  nullable=false)
      */
     private $email;
 
@@ -71,5 +72,28 @@ class User
         $this->password = $password;
 
         return $this;
+    }
+
+    public function getEncoderName()
+    {
+        return null; // use the default encoder
+    }
+
+    public function getRoles() {
+        return ['ROLE_USER'];
+    }
+
+
+    public function getSalt() {
+
+    }
+
+    public function getUsername() {
+        return $this->name;
+    }
+
+
+    public function eraseCredentials() {
+
     }
 }

@@ -1,0 +1,2 @@
+2020/03/29 13:25:43 [error] 6#6: *1 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 10.0.2.2, server: , request: "GET /img/icons/android-chrome-192x192.png HTTP/1.1", host: "localhost:8000"
+2020/03/29 13:25:43 [error] 6#6: *2 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 10.0.2.2, server: , request: "GET /img/icons/android-chrome-512x512.png HTTP/1.1", host: "localhost:8000"

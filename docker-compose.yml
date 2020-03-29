@@ -5,7 +5,7 @@ services:
       context: frontend/.docker/nginx
     volumes:
       - ./frontend:/var/www/frontend
-      - ./frontend/docker/nginx/logs:/var/log/nginx
+      - ./frontend/.docker/nginx/logs:/var/log/nginx
     ports:
       - "8000:8000"
   nodejs-frontend:
@@ -46,16 +46,25 @@ services:
     environment:
       #unlimited
       - COMPOSER_MEMORY_LIMIT=-1
-#  postgres-backend-api:
-#    build:
-#      context: backend-api/api/.docker/postgres
-#    restart: always
-#    ports:
-#      #care, custom port for prevent conflict
-#      - "5433:5432"
+  postgres-backend-api:
+    build:
+      context: backend-api/auth-service/.docker/postgres
+    restart: always
+    ports:
+      #care, custom port for prevent conflict
+      - "5433:5432"
 #    volumes:
-#      -  ./backend-api/api/.docker/postgres/dbfiles:/var/lib/postgresql/data
-#    environment:
-#      POSTGRES_USER: video-stream-api
-#      POSTGRES_PASSWORD: uVK4PBfdNBncWLbmZMKG
-#      POSTGRES_DB: video-stream-api
+#      -  ./backend-api/auth-service/.docker/postgres/dbfiles:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: video-stream-api
+      POSTGRES_PASSWORD: uVK4PBfdNBncWLbmZMKG
+      POSTGRES_DB: video-stream-api
+  backend-auth-rabbit_mq:
+    build:
+      context: backend-api/auth-service/.docker/rabbitMQ
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: 'auth-api'
+      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
