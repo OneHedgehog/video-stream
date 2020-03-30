@@ -731,3 +731,5 @@
 10.0.2.2 - - [29/Mar/2020:21:39:04 +0000] "POST /auth/register HTTP/1.1" 500 20400 "http://localhost:4200/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 10.0.2.2 - - [29/Mar/2020:21:39:26 +0000] "POST /auth/register HTTP/1.1" 500 49104 "http://localhost:4200/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
 10.0.2.2 - - [29/Mar/2020:21:39:55 +0000] "POST /auth/register HTTP/1.1" 200 83 "http://localhost:4200/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+10.0.2.2 - - [30/Mar/2020:16:48:08 +0000] "GET /auth/ HTTP/1.1" 404 4095 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
+10.0.2.2 - - [30/Mar/2020:16:48:10 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/auth/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36"
