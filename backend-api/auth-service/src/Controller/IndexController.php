@@ -15,16 +15,19 @@ class IndexController extends AbstractController
     private $passwordEncoder;
     private $producer;
     private $logger;
+    private $mailer;
 
     public function __construct(
         ProducerInterface $producer,
         UserPasswordEncoderInterface $passwordEncoder,
-        LoggerInterface $logger
+        LoggerInterface $logger,
+        \Swift_Mailer $mailer
     )
     {
         $this->passwordEncoder = $passwordEncoder;
         $this->producer = $producer;
         $this->logger = $logger;
+        $this->mailer = $mailer;
     }
 
     /**
@@ -55,11 +58,13 @@ class IndexController extends AbstractController
                 $userCredentials->password
             )
         );
+        $entityManager->persist($user);
+        $entityManager->flush();
 
-        $this->producer->publish(serialize($user));
-//        $entityManager->persist($user);
-//        $entityManager->flush();
+        $this->producer->publish(serialize($userCredentials));
 
-        return $this->json($userCredentials);
+        return $this->json([
+            'is_send' => $user
+        ]);
     }
 }

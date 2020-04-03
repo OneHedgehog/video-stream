@@ -54,4 +54,4 @@ RUN  php -d memory_limit=-1 /usr/local/bin/composer require --dev symfony/phpuni
 RUN composer install
 
 # service name shoud change if needed
-CMD  php bin/console rabbitmq:consumer user_mailing -vvv
+# CMD  php bin/console rabbitmq:consumer user_mailing -vvv

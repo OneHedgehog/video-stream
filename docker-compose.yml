@@ -53,12 +53,14 @@ services:
     ports:
       #care, custom port for prevent conflict
       - "5433:5432"
-#    volumes:
-#      -  ./backend-api/auth-service/.docker/postgres/dbfiles:/var/lib/postgresql/data
+    volumes:
+      -  ./backend-api/auth-service/.docker/postgres/dbfiles:/var/lib/postgresql/pgdata
     environment:
       POSTGRES_USER: video-stream-api
       POSTGRES_PASSWORD: uVK4PBfdNBncWLbmZMKG
       POSTGRES_DB: video-stream-api
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_INITDB_ARGS: "--pgdata=/var/lib/postgresql/data/pgdata"
   backend-auth-rabbit_mq:
     build:
       context: backend-api/auth-service/.docker/rabbitMQ
@@ -68,3 +70,11 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: 'auth-api'
       RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
+  backend-auth-mail-server:
+    build:
+      context: backend-api/auth-service/.docker/mail
+    ports:
+      # http port admin
+      - "8025:8025"
+      # smtp port
+      - "1025:1025"
