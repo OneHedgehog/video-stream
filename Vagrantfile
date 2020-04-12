@@ -18,8 +18,9 @@ Vagrant.configure("2") do |config|
    config.vm.network "forwarded_port", guest: 5672, host: 5672
    config.vm.network "forwarded_port", guest: 15672, host: 15672
 
-   config.vm.synced_folder "./frontend", "/vagrant/frontend", type: "nfs", create: true
+  config.vm.synced_folder "./frontend", "/vagrant/frontend", type: "nfs", create: true
 
   config.vm.provision :docker
-  config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true, run: "always"
+  config.vm.provision :docker_compose, yml: ["/vagrant/auth-service/docker-compose.yml"], rebuild: true, run: "always"
+  config.vm.provision :docker_compose, yml: ["/vagrant/frontend/docker-compose.yml"], rebuild: true, run: "always"
 end

@@ -1,0 +1,28 @@
+version: '3'
+services:
+  nginx-frontend:
+    build:
+      context: .docker/nginx
+    volumes:
+      - ./:/var/www/frontend
+      - .docker/nginx/logs:/var/log/nginx
+    ports:
+      - "8000:8000"
+  nodejs-frontend:
+    stdin_open: true
+    build:
+      context: .docker/nodejs
+    volumes:
+      - ./:/var/www/frontend
+    environment:
+      - npm_config_unsafe_perm=true
+      #allow hot reload on docker volumes
+      - CHOKIDAR_USEPOLLING=true
+      #decrease CPU load
+      - CHOKIDAR_INTERVAL=1000
+      - CHOKIDAR_USE_FS_EVENTS=true
+      - CHOKIDAR_IGNORE_PERMISSION_ERRORS=true
+    working_dir: /var/www/frontend
+    tty: true
+    ports:
+      - "4200:4200"

@@ -1,0 +1,54 @@
+version: '3'
+services:
+  nginx-backend-api:
+    build:
+      context: .docker/nginx
+    volumes:
+      - ./:/var/www/auth-service
+      - .docker/nginx/logs:/var/log/nginx
+    command: [nginx-debug, '-g', 'daemon off;']
+    ports:
+      - "8080:8080"
+  php-backend-auth-api:
+    build:
+      context: .docker/php
+    working_dir: /var/www/auth-service
+    volumes:
+      - ./:/var/www/auth-service
+    ports:
+      - "9000:9000"
+    environment:
+      #unlimited
+      - COMPOSER_MEMORY_LIMIT=-1
+  postgres-backend-api:
+    build:
+      context: .docker/postgres
+    restart: always
+    ports:
+      #care, custom port for prevent conflict
+      - "5434:5432"
+    volumes:
+      -  .docker/postgres/dbfiles:/var/lib/postgresql/pgdata
+    environment:
+      POSTGRES_USER: video-stream-api
+      POSTGRES_PASSWORD: uVK4PBfdNBncWLbmZMKG
+      POSTGRES_DB: video-stream-api
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_INITDB_ARGS: "--pgdata=/var/lib/postgresql/data/pgdata"
+  backend-auth-rabbit_mq:
+    build:
+      context: .docker/rabbitMQ
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: 'auth-api'
+      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
+  backend-auth-mail-server:
+    build:
+      context: .docker/mail
+    ports:
+      # http port admin
+      - "8025:8025"
+      # smtp port
+      - "1025:1025"
