@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx-main-service:
+    build:
+      context: .docker/nginx
+    volumes:
+      - ./:/var/www/main-service
+      - .docker/nginx/logs:/var/log/nginx
+    ports:
+      - "5000:5000"
+  nodejs-main-service:
+    build:
+      context: .docker/nodejs
+    volumes:
+      - ./:/var/www/main-service
+    working_dir: /var/www/main-service
+    tty: true
+    ports:
+      - "3000:3000"
