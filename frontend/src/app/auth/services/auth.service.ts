@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {UserAuthCredentilas} from "../models/user";
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,6 @@ export class AuthService {
   ) { }
 
   public login(userAuthCredentilas: UserAuthCredentilas) {
-    return this.httpClient.post('http://localhost:8080/auth/register', userAuthCredentilas)
+    return this.httpClient.post(`${environment.apiUrl}/auth/register`, userAuthCredentilas)
   }
 }

@@ -820,3 +820,5 @@
 10.0.2.2 - - [12/Apr/2020:11:11:37 +0000] "GET /auth/ HTTP/1.1" 404 4090 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
 10.0.2.2 - - [22/Apr/2020:21:35:00 +0000] "GET /feed HTTP/1.1" 404 571 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36"
 10.0.2.2 - - [22/Apr/2020:21:35:00 +0000] "GET /favicon.ico HTTP/1.1" 404 571 "http://localhost:8080/feed" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36"
+10.0.2.2 - - [23/Apr/2020:18:36:37 +0000] "OPTIONS /auth/register HTTP/1.1" 200 5 "http://localhost:4200/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"
+10.0.2.2 - - [23/Apr/2020:18:36:49 +0000] "POST /auth/register HTTP/1.1" 500 14868 "http://localhost:4200/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36"
