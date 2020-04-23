@@ -17,3 +17,8 @@ services:
     tty: true
     ports:
       - "3000:3000"
+  redis-main-service:
+    build:
+      context: .docker/redis
+    ports:
+      - "6379:6379"
