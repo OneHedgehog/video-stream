@@ -35,15 +35,15 @@ services:
       POSTGRES_DB: video-stream-api
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_INITDB_ARGS: "--pgdata=/var/lib/postgresql/data/pgdata"
-  backend-auth-rabbit_mq:
-    build:
-      context: .docker/rabbitMQ
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    environment:
-      RABBITMQ_DEFAULT_USER: 'auth-api'
-      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
+#  backend-auth-rabbit_mq:
+#    build:
+#      context: .docker/rabbitMQ
+#    ports:
+#      - "5672:5672"
+#      - "15672:15672"
+#    environment:
+#      RABBITMQ_DEFAULT_USER: 'auth-api'
+#      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
   backend-auth-mail-server:
     build:
       context: .docker/mail

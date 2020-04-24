@@ -22,3 +22,12 @@ services:
       context: .docker/redis
     ports:
       - "6379:6379"
+  rabbit_mq-main-service:
+    build:
+      context: .docker/rabbitMQ
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: 'auth-api'
+      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
