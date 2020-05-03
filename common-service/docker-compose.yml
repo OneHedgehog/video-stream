@@ -1,0 +1,11 @@
+version: '3'
+services:
+  rabbit_mq-common-service:
+    build:
+      context: .docker/rabbitMQ
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: 'auth-api'
+      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'

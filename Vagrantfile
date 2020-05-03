@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "./main-service", "/vagrant/main-service", type: "nfs", create: true
 
   config.vm.provision :docker
+  config.vm.provision :docker_compose, yml: ["/vagrant/common-service/docker-compose.yml"], rebuild: true, run: "always"
   config.vm.provision :docker_compose, yml: ["/vagrant/main-service/docker-compose.yml"], rebuild: true, run: "always"
   config.vm.provision :docker_compose, yml: ["/vagrant/auth-service/docker-compose.yml"], rebuild: true, run: "always"
   config.vm.provision :docker_compose, yml: ["/vagrant/frontend/docker-compose.yml"], rebuild: true, run: "always"

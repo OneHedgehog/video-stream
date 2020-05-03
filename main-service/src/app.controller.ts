@@ -20,8 +20,8 @@ export class AppController {
 
     @Post('/auth/register')
     async postRegisterUser(@Body() user) {
-     return this.userService.authenticate(user).pipe(
-         catchError( () => of(JSON.stringify(user)))
-     );
+        return this.userService.authenticate(user).pipe(
+            catchError((err) => of(err))
+        )
     }
 }

@@ -19,7 +19,7 @@ import {UserService} from "./services/user.service";
                 name: 'AUTH_SERVICE',
                 transport: Transport.RMQ,
                 options: {
-                    urls: ['amqp://localhost:5672'],
+                    urls: ['amqp://auth-api:UMHXuMhbQypZwPVh@rabbit_mq-common-service:5672'],
                     queue: 'auth_queue',
                     queueOptions: {
                         durable: false

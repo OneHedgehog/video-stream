@@ -17,17 +17,18 @@ services:
     tty: true
     ports:
       - "3000:3000"
+    networks:
+      # naming is matter to use it from another docker-container
+      - common-service_default
+      - main-service_default
   redis-main-service:
     build:
       context: .docker/redis
     ports:
       - "6379:6379"
-  rabbit_mq-main-service:
-    build:
-      context: .docker/rabbitMQ
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-    environment:
-      RABBITMQ_DEFAULT_USER: 'auth-api'
-      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
+networks:
+  # ability to connect from another docker-compose
+  common-service_default:
+    external: true
+  main-service_default:
+    external: true
