@@ -13,7 +13,7 @@ export class UserService {
 
     public authenticate(user) {
         return this.amqpClient.send<any, any>('[auth_service]_authenticate', user).pipe(
-            takeUntil(interval(2000))
+            //takeUntil(interval(2000))
         );
     }
 }

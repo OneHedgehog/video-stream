@@ -25,8 +25,8 @@ bitmq-bundle`
 
 
 ### run consumer
-`docker-compose run php-backend-auth-api php bin/console rabbitmq:consumer user_m
-ailing -vvv`
+`docker-compose run php-backend-auth-api php bin/console rabbitmq:consumer user_auth -vvv`
 
 
-
+### start rpc server
+`docker-compose run php-backend-auth-api php bin/console rabbitmq:rpc-server user_auth`

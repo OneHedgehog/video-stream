@@ -26,13 +26,8 @@ class UserConsumer implements ConsumerInterface {
 
     public function execute(AMQPMessage $msg)
     {
-        $user = unserialize($msg->getBody());
-        $message = (new \Swift_Message('Welcome with registering at'))
-            ->setFrom($user->email)
-            ->setTo('auth-service@somemail.com')
-            ->setBody('Welcome with registering at this site...');
-        $this->mailer->send($message);
+        $message_data = json_decode($msg->getBody());
 
-        return ConsumerInterface::MSG_ACK;
+        return json_encode(['isWorked' => true]);
     }
 }

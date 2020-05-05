@@ -2,14 +2,23 @@ old_sound_rabbit_mq:
     connections:
         default:
             url: '%env(RABBITMQ_URL)%'
-    producers:
-        # use 'old_sound_rabbit_mq.task_producer' service to send data.
-        user_mailing:
-            connection:       default
-            exchange_options: { name: 'user_mailing_queue', type: direct }
-    consumers:
-        user_mailing:
-            connection:       default
-            exchange_options: { name: 'user_mailing_queue', type: direct }
-            queue_options:    { name: 'user_mailing_queue'}
-            callback:         App\Consumer\UserConsumer
+#    producers:
+#        # use 'old_sound_rabbit_mq.task_producer' service to send data.
+#        user_mailing:
+#            connection:       default
+#            exchange_options: { name: 'user_mailing_queue', type: direct }
+#    consumers:
+#        user_auth:
+#            connection:       default
+#            exchange_options: { name: 'auth_queue', type: direct }
+#            queue_options:    { name: 'auth_queue', durable: false}
+#            callback:         App\Consumer\UserConsumer
+#            enable_logger: true
+    rpc_servers:
+        user_auth:
+            connection: default
+            callback:   App\Consumer\UserConsumer
+            qos_options: {prefetch_size: 0, prefetch_count: 1, global: false}
+            exchange_options: { name: 'auth_queue', type: direct}
+            queue_options: {name: 'auth_queue', durable: false, auto_delete: false}
+            serializer: json_encode

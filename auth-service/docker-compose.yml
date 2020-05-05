@@ -18,14 +18,17 @@ services:
     ports:
       - "9000:9000"
     environment:
-      #unlimited
+        # unlimited
       - COMPOSER_MEMORY_LIMIT=-1
+    networks:
+      - auth-service_default
+      - common-service_default
   postgres-backend-api:
     build:
       context: .docker/postgres
     restart: always
     ports:
-      #care, custom port for prevent conflict
+      # care, custom port for prevent conflict
       - "5434:5432"
     volumes:
       -  .docker/postgres/dbfiles:/var/lib/postgresql/pgdata
@@ -35,15 +38,6 @@ services:
       POSTGRES_DB: video-stream-api
       PGDATA: /var/lib/postgresql/data/pgdata
       POSTGRES_INITDB_ARGS: "--pgdata=/var/lib/postgresql/data/pgdata"
-#  backend-auth-rabbit_mq:
-#    build:
-#      context: .docker/rabbitMQ
-#    ports:
-#      - "5672:5672"
-#      - "15672:15672"
-#    environment:
-#      RABBITMQ_DEFAULT_USER: 'auth-api'
-#      RABBITMQ_DEFAULT_PASS: 'UMHXuMhbQypZwPVh'
   backend-auth-mail-server:
     build:
       context: .docker/mail
@@ -52,3 +46,9 @@ services:
       - "8025:8025"
       # smtp port
       - "1025:1025"
+networks:
+  # ability to connect from another docker-compose
+  auth-service_default:
+    external: true
+  common-service_default:
+    external: true
